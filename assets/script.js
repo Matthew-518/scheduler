@@ -2,16 +2,13 @@
 var currentDay = $("#currentDay");
 let blockTime = $(".time-block");
 var currentTime;
-
-
 clockUpdater();
-//Load data from local storage on start
 loadData();
 
-//Set interval to constanstly update time
+//Set interval to update
 var clock = setInterval(clockUpdater, 1000)
 
-//Set current time and check time blocks
+//Set current time 
 function clockUpdater(){
     currentTime = moment().format('MMMM Do YYYY, h:mm:ss a');
     currentDay.text(currentTime);
@@ -23,7 +20,7 @@ function checkTime() {
     currentHour = moment().hour();
 
     $(".time-block").each(function () {
-        var blockTime = parseInt($(this).attr("id").split("h")[1]);
+        var blockTime = parseInt($(this).attr("id"));
 
         // To check the time and add the classes for background indicators
         if (blockTime < currentHour) {
@@ -59,10 +56,9 @@ function saveClick(event){
         alert("Type text into the field to save it on the calendar")
     else{
         localStorage.setItem(time, text);
-        alert("Task has been saved");
+        alert("This assignment has been saved");
     }
 }
-
 
 //Clear button click listener
 $(".clearBtn").on("click", clearClick);
@@ -70,7 +66,7 @@ $(".clearBtn").on("click", clearClick);
 //Save input to local storage
 function clearClick(event){
     
-    var clear = confirm("Are you sure you want to clear your day calendar");
+    var clear = confirm("Are you sure? No going back after you click that button!");
 
     if(clear){
         localStorage.clear();
@@ -78,7 +74,6 @@ function clearClick(event){
     }
     
 }
-
 
 //Load data from local storage to each time block
 function loadData(){ 
@@ -97,18 +92,3 @@ function loadData(){
 
 
 
-// var currentHour = currentTime.hours();
-    // var timeBlock = $(".time-block");
-    // for(var i = 0; i < timeBlock.length; i++){
-    //     var block = timeBlock[i];
-    //     if(parseInt(block.id.split("-")[0]) < currentHour){
-    //     $(block).addClass("past");
-    //     }
-    //     else if(parseInt(block.id.split("-")[0]) === currentHour){
-    //     $(block).removeClass("past");
-    //          $(block).addClass("present");
-    //      }
-    //     else{
-    //          $(block).removeClass("past");
-    //          $(block).removeClass("present");
-    //          $(block).addClass("future");
