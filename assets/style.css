@@ -1,0 +1,91 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1;
+    background-color: rgb(222, 222, 228);
+  }
+  
+  textarea{
+    background: transparent;
+    border: none;
+    resize: none;
+    color: #000000;
+    border-left: 1px solid black;
+    padding: 10px;
+  }
+  
+  .jumbotron {
+    text-align: center;
+    /* background-color: transparent; */
+    background-color: #06AED5;
+    color: rgb(73, 73, 75);
+    border-radius: 0;
+    border-bottom: 10px solid rgb(100, 100, 102);
+  }
+
+  .lead {
+    font-size: 25px;
+    margin-top: 1%;
+  }
+  
+  .description{
+    white-space: pre-wrap;
+    /* background-color: rgb(220, 220, 224); */
+    border: 1px solid black;
+    border-radius: 5px;
+
+  }
+  
+  .time-block{
+    text-align: center;
+    border-radius: 5px;
+  }
+  
+  .row {
+    white-space: pre-wrap;
+    height: 80px;
+    
+    /* border-top: 1px solid white; */
+    /* background-color: #d3d3d3; */
+  }
+
+  .row:last-child {
+    margin-bottom: 2%;
+  }
+  
+  .hour {
+    background-color: #06AED5;
+    color: white;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    text-align: center;
+    align-items: center;
+    padding-top: 25px;
+    font-size: 17px;
+  }
+  
+  .past {
+    background-color: #d3d3d3;
+  }
+  
+  .present {
+    background-color: #ff6961;
+  }
+  
+  .future {
+    background-color: #77dd77;
+  }
+  
+  .saveBtn {
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #06AED5;
+    color: white;
+  }
+  
+  .saveBtn i:hover {
+    font-size: 20px;
+    transition: all .3s ease-in-out;
+    background-color: #035a6d;
+
+  } 
