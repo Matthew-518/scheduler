@@ -1,8 +1,8 @@
 // $(document).ready(function () {
 var currentDay = $("#currentDay");
-let currentHour = moment().format("h")
+let blockTime = $(".time-block");
 var currentTime;
-var currentState;
+
 
 clockUpdater();
 //Load data from local storage on start
@@ -19,15 +19,33 @@ function clockUpdater(){
 }
 
 function checkTime() {
-    
 
+    currentHour = moment().hour();
 
+    $(".time-block").each(function () {
+        var blockTime = parseInt($(this).attr("id").split("h")[1]);
+
+        // To check the time and add the classes for background indicators
+        if (blockTime < currentHour) {
+            $(this).removeClass("future");
+            $(this).removeClass("present");
+            $(this).addClass("past");
+        }
+        else if (blockTime === currentHour) {
+            $(this).removeClass("past");
+            $(this).removeClass("future");
+            $(this).addClass("present");
+        }
+        else {
+            $(this).removeClass("present");
+            $(this).removeClass("past");
+            $(this).addClass("future");
+
+        }
+    })
 }
 
-
-
-
-console.log(currentState)
+console.log(currentHour)
 
 // //Save button click listener
 $(".saveBtn").on("click", saveClick);
