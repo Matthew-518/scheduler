@@ -83,9 +83,25 @@ body {
     color: white;
   }
   
-  .saveBtn i:hover {
+  .saveBtn:hover {
     font-size: 20px;
     transition: all .3s ease-in-out;
     background-color: #035a6d;
 
   } 
+
+  .clearBtn {
+    margin-left: 12.5%;
+    background-color: rgb(197, 25, 25);
+    padding: 15px 15px;
+    width: 75%;
+    margin-bottom: 2%;
+    color: whitesmoke;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-style: bold;
+  }
+
+  .clearBtn:hover {
+    background-color: rgb(131, 6, 6);
+  }
